@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+   >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:id="@+id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <fragment
+            android:id="@+id/My_Container_1_ID"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:name="com.se1.DropBox.DropboxDownload"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/My_Container_2_ID">
+        </fragment>
+        <fragment
+            android:id="@+id/My_Container_2_ID"
+            android:layout_width="193dp"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:name="com.se1.navdrawer.SuperAwesomeCardFragment"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true">
+        </fragment>
+    </LinearLayout>
+
+</RelativeLayout>

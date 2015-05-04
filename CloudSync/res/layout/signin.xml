@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    style="@style/VerticalThemeLayout"
+    android:weightSum="1">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/onedrive_logo"
+        android:contentDescription="onedrive_logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect your OneDrive account with CloudSync"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:layout_weight="0.06" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+<Button
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    android:text="@string/sign_in"
+    android:background="@color/btnbg"
+    android:layout_gravity="center"
+    android:layout_marginLeft="100dp"
+    android:layout_weight="0.60"
+    />
+
+
+    </LinearLayout>
+
+</LinearLayout>

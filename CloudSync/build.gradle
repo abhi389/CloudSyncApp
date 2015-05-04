@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.10.+'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://repo.commonsware.com.s3.amazonaws.com"
+        }
+    }
+}
+
+apply plugin: 'android-sdk-manager'
+apply plugin: 'android'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    compile files('libs/json_simple-1.1.jar')
+    compile files('libs/dropbox-android-sdk.jar')
+    compile project(':src')
+    debugCompile project(':merge')
+    releaseCompile 'com.commonsware.cwac:merge:1.1.+'
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 3
+        versionName "1.02"
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+
+
+    lintOptions {
+          abortOnError false
+    }
+}
